@@ -1,0 +1,73 @@
+{
+  "name": "n8n-nodes-teachable",
+  "version": "1.0.0",
+  "description": "A comprehensive n8n community node for Teachable providing 8 resources and 30+ operations for course management, student enrollment, and sales tracking automation",
+  "license": "BUSL-1.1",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "licensing@velobpa.com",
+    "url": "https://velobpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-teachable.git"
+  },
+  "homepage": "https://velobpa.com",
+  "keywords": [
+    "n8n",
+    "n8n-community-node-package",
+    "teachable",
+    "online-courses",
+    "course-management",
+    "e-learning",
+    "student-enrollment",
+    "lms",
+    "automation"
+  ],
+  "main": "dist/nodes/Teachable/Teachable.node.js",
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/TeachableApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Teachable/Teachable.node.js",
+      "dist/nodes/Teachable/TeachableTrigger.node.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.20",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^4.0.2",
+    "jest": "^29.7.0",
+    "n8n-workflow": "^1.30.0",
+    "prettier": "^3.2.5",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "^1.30.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
